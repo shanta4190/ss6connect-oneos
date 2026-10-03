@@ -1,0 +1,35 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "share": "disabled",
+  "instructions": ["OPENCODE.md"],
+  "server": {
+    "hostname": "127.0.0.1"
+  },
+  "permission": {
+    "*": "ask",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny"
+    },
+    "glob": "allow",
+    "grep": "allow",
+    "edit": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "npm run build": "allow",
+      "npm run test:local": "allow",
+      "node test-local.mjs": "allow"
+    }
+  }
+}
