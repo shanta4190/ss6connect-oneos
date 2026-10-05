@@ -4,7 +4,7 @@
 
 The Cloudflare Pages workflow (`.github/workflows/deploy-oneos.yml`) uses Node.js 20, runs `npm ci` followed by `npm run build`, and deploys the generated `out/` directory. `wrangler.toml` identifies the Pages project as `ss6connect-oneos`.
 
-This checkout does not include a `package.json` or `package-lock.json`, so the workflow's install and build steps cannot currently run. Add the application and its npm manifests before relying on this workflow to publish a build.
+This checkout does not include a `package.json` or `package-lock.json`, so the workflow's install and build steps cannot currently run. The workflow also still references the unresolved `cloudflare/pages-action@v1`; replace it with a supported Wrangler deployment action. Add the application and its npm manifests and address the deployment action before relying on this workflow to publish a build.
 
 ## Deployment
 
